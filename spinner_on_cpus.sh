@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ITER=17
-USLEEP=2
+ITER=13
+USLEEP=5
 
 if [ -z "$1" ]
 then
@@ -12,3 +12,5 @@ for cpu in "$@"
 do
 	taskset -c $cpu spinner -i $ITER -s $USLEEP &
 done
+
+wait

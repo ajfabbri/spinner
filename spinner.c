@@ -49,7 +49,7 @@ static int atol_only_cooler(const char *str, long *out_val)
 	long val;
 	char *bad_charp;
 	val = strtol(str, &bad_charp, 10);
-	if (bad_charp == NULL) {
+	if (*bad_charp == '\0') {
 		*out_val = val;
 		return 0;
 	} else {
